@@ -1,3 +1,5 @@
+> 🌐 [English](PRD-v2.en.md) · **한국어**
+
 # [PRD v2] Linear 연동 버그 리포팅 크롬 익스텐션 (MVP)
 
 리뷰 반영 최종본. v1 대비 변경점은 각 항목에 표기.
@@ -39,14 +41,14 @@
 
 ### 3.3 네트워크 로그
 - **REQ-05 (변경):** 페이지 로드 시점부터 fetch/XHR을 가로채 **allowlist 매칭 요청만** rolling buffer(20)에 저장.
-  매칭 안 되는 요청(텔레메트리 포함)은 수집 제외.
+  매칭 안 되는 요청(텔레메트리 포함)은 수집 제외. 캡처 시 Datadog/OTel 트레이싱 헤더는 자동 제거.
 - **REQ-06:** 티켓 화면에서 버퍼를 리스트로 노출. **4xx/5xx는 상단 하이라이트**.
 - **REQ-07:** 유저가 첨부할 요청을 **체크박스로 선택**(Request/Response Body 포함).
 - **REQ-08 (완화):** 바디/헤더 자동 마스킹 없음. 민감정보는 화면 모자이크로 대응.
 
 ### 3.4 Linear 이슈 생성
-- **REQ-09:** 제목(Title) + 설명(Description) 입력.
-- **REQ-10 (명확화):** `issueCreate`로 이슈 생성. **본문(Description)** = 유저 설명 +
+- **REQ-09:** 제목(Title) + 설명(Problem / Requirements) 입력.
+- **REQ-10 (명확화):** `issueCreate`로 이슈 생성. **본문(Description)** = `## Problem` + `## Requirements` +
   `## Screenshot` 이미지(`![](assetUrl)`) + `## Network logs` 선택 요청(json 코드블록).
   제목 → 이슈 Title, 나머지는 전부 Description 하나로 조립. 이미지는 `fileUpload` 3-스텝으로 첨부.
 

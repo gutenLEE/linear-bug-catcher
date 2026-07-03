@@ -137,7 +137,7 @@ src/
 
 ## Contributing
 
-Issues and PRs are welcome. Please run `pnpm build` (type-check + build) before opening a PR. See [docs/PRD-v2.md](docs/PRD-v2.md) for the product spec and design decisions.
+Issues and PRs are welcome. Please run `pnpm build` (type-check + build) before opening a PR. See the product spec and design decisions: [English](docs/PRD-v2.en.md) · [한국어](docs/PRD-v2.ko.md).
 
 ## License
 
