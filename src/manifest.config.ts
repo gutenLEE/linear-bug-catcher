@@ -5,8 +5,20 @@ export default defineManifest({
   name: 'Linear Bug Catcher',
   version: '0.1.0',
   description: 'Capture a screenshot and network logs, then file a Linear ticket without leaving the page.',
+  icons: {
+    16: 'src/icons/icon-16.png',
+    32: 'src/icons/icon-32.png',
+    48: 'src/icons/icon-48.png',
+    128: 'src/icons/icon-128.png',
+  },
   action: {
     default_title: 'Linear Bug Catcher (Alt+Shift+B)',
+    default_icon: {
+      16: 'src/icons/icon-16.png',
+      32: 'src/icons/icon-32.png',
+      48: 'src/icons/icon-48.png',
+      128: 'src/icons/icon-128.png',
+    },
   },
   background: {
     service_worker: 'src/background/index.ts',
