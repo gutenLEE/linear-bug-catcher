@@ -9,6 +9,16 @@
 
 A Chrome (MV3) extension for QA engineers and developers. When you hit a bug, press a shortcut: the current tab is captured, the recent API requests are already buffered, you annotate the screenshot, pick the failed requests, and a Linear issue is created with everything embedded in the body.
 
+<p align="center">
+  <img src="store-assets/shot1.png" width="760" alt="Capture a screenshot, attach failing requests, and create a Linear issue in two clicks">
+</p>
+
+<p align="center">
+  <img src="store-assets/shot2.png" width="380" alt="Connect once with a Linear API key; an allowlist keeps telemetry out of reports">
+  &nbsp;
+  <img src="store-assets/shot3.png" width="380" alt="Annotate with rectangle, arrow, text, and a mosaic tool that permanently redacts sensitive data">
+</p>
+
 ---
 
 ## Features
