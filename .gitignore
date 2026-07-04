@@ -3,3 +3,8 @@ dist
 *.log
 .DS_Store
 .claude/settings.local.json
+
+# Packaged browser extension artifacts
+*.zip
+*.crx
+*.pem
