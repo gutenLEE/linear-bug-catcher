@@ -12,6 +12,12 @@
 
 A Chrome (MV3) extension for QA engineers and developers. When you hit a bug, press a shortcut: the current tab is captured, the recent API requests are already buffered, you annotate the screenshot, pick the failed requests, and a Linear issue is created with everything embedded in the body.
 
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/linear-bug-catcher/lcfjgcdfcjpjhpmhepeagjhmkmkddkme">
+    <img src="https://img.shields.io/badge/Chrome%20Web%20Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Install from the Chrome Web Store" height="46">
+  </a>
+</p>
+
 ---
 
 ## Features
@@ -57,7 +63,11 @@ The network buffer lives in the content script (not the background worker), so i
 
 ## Install
 
-**[⬇️ Install from the Chrome Web Store](https://chromewebstore.google.com/detail/linear-bug-catcher/lcfjgcdfcjpjhpmhepeagjhmkmkddkme)** — the easiest way to get started.
+<a href="https://chromewebstore.google.com/detail/linear-bug-catcher/lcfjgcdfcjpjhpmhepeagjhmkmkddkme">
+  <img src="https://img.shields.io/badge/Chrome%20Web%20Store-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Install from the Chrome Web Store" height="46">
+</a>
+
+Click **Add to Chrome** on the store page — it's the easiest way to get started.
 
 > First run opens **Settings**. Create a Linear **Personal API key**
 > (Linear → Settings → Security & access → Personal API keys), paste it,
