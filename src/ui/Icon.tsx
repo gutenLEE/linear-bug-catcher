@@ -15,6 +15,8 @@ import {
   IconClipboard,
   IconArrowsMaximize,
   IconArrowsMinimize,
+  IconBookmark,
+  IconBookmarkFilled,
   type IconProps,
 } from '@tabler/icons-react'
 import type { FC } from 'react'
@@ -36,6 +38,8 @@ const MAP: Record<string, FC<IconProps>> = {
   clipboard: IconClipboard,
   maximize: IconArrowsMaximize,
   minimize: IconArrowsMinimize,
+  bookmark: IconBookmark,
+  'bookmark-filled': IconBookmarkFilled,
 }
 
 export function Icon({ name, size = 16 }: { name: keyof typeof MAP | string; size?: number }) {

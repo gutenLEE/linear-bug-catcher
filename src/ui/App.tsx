@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { NetworkLog, Settings } from '../lib/types'
-import { loadSettings, saveSettings } from '../lib/storage'
+import { addBookmark, loadBookmarks, loadSettings, removeBookmark, saveSettings } from '../lib/storage'
 import { ReportModal } from './ReportModal'
 import { SettingsView } from './SettingsView'
 
@@ -15,6 +15,7 @@ type View = 'report' | 'settings'
 export function App({ screenshot, logs, onClose }: Props) {
   const [settings, setSettings] = useState<Settings | null>(null)
   const [view, setView] = useState<View>('report')
+  const [bookmarks, setBookmarks] = useState<NetworkLog[]>([])
 
   useEffect(() => {
     loadSettings().then((s) => {
@@ -22,6 +23,26 @@ export function App({ screenshot, logs, onClose }: Props) {
       setView(s.apiKey && s.teamId ? 'report' : 'settings')
     })
   }, [])
+
+  useEffect(() => {
+    loadBookmarks().then(setBookmarks)
+  }, [])
+
+  const bookmarkedIds = useMemo(() => new Set(bookmarks.map((b) => b.id)), [bookmarks])
+
+  // Live buffer plus any bookmarks not currently in the buffer (they survived a
+  // navigation), deduped by id so a still-live bookmarked request shows once.
+  const mergedLogs = useMemo(() => {
+    const live = new Set(logs.map((l) => l.id))
+    return [...logs, ...bookmarks.filter((b) => !live.has(b.id))]
+  }, [logs, bookmarks])
+
+  const toggleBookmark = useCallback(
+    async (log: NetworkLog) => {
+      setBookmarks(bookmarkedIds.has(log.id) ? await removeBookmark(log.id) : await addBookmark(log))
+    },
+    [bookmarkedIds],
+  )
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -51,8 +72,10 @@ export function App({ screenshot, logs, onClose }: Props) {
         ) : (
           <ReportModal
             screenshot={screenshot}
-            logs={logs}
+            logs={mergedLogs}
             settings={settings}
+            bookmarkedIds={bookmarkedIds}
+            onToggleBookmark={toggleBookmark}
             onChange={persist}
             onOpenSettings={() => setView('settings')}
             onClose={onClose}

@@ -9,12 +9,14 @@ interface Props {
   screenshot: string
   logs: NetworkLog[]
   settings: Settings
+  bookmarkedIds: Set<string>
+  onToggleBookmark: (log: NetworkLog) => void
   onChange: (s: Settings) => void
   onOpenSettings: () => void
   onClose: () => void
 }
 
-export function ReportModal({ screenshot, logs, settings, onChange, onOpenSettings, onClose }: Props) {
+export function ReportModal({ screenshot, logs, settings, bookmarkedIds, onToggleBookmark, onChange, onOpenSettings, onClose }: Props) {
   const [title, setTitle] = useState('')
   const [problem, setProblem] = useState('')
   const [requirements, setRequirements] = useState('')
@@ -164,7 +166,13 @@ export function ReportModal({ screenshot, logs, settings, onChange, onOpenSettin
           expanded={expanded}
           onToggleExpand={() => setExpanded((v) => !v)}
         />
-        <NetworkList logs={logs} selected={selected} onToggle={toggle} />
+        <NetworkList
+          logs={logs}
+          selected={selected}
+          onToggle={toggle}
+          bookmarkedIds={bookmarkedIds}
+          onToggleBookmark={onToggleBookmark}
+        />
       </div>
 
       <div className="body pt0">

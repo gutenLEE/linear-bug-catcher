@@ -50,3 +50,10 @@ export const DEFAULT_SETTINGS: Settings = {
 
 /** How many matched requests we keep per tab. */
 export const BUFFER_LIMIT = 20
+
+/**
+ * How many bookmarked (pinned) logs we persist. Bookmarks survive page
+ * navigation/reload by living in chrome.storage.local instead of the in-memory
+ * buffer. FIFO: adding an 11th drops the oldest.
+ */
+export const BOOKMARK_LIMIT = 10

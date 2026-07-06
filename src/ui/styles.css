@@ -351,6 +351,8 @@ textarea.input {
   color: #c0362c;
 }
 .netpath {
+  flex: 1;
+  min-width: 0;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
   color: #374151;
@@ -360,6 +362,31 @@ textarea.input {
 }
 .netrow.err .netpath {
   color: #c0362c;
+}
+.netrow.pinned {
+  background: #f2f1fc;
+}
+.netrow.pinned.err {
+  background: #fbe8ec;
+}
+.pin-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: none;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #c4c7cf;
+  transition: color 0.1s;
+}
+.pin-btn:hover {
+  color: #5b57d9;
+}
+.pin-btn.on {
+  color: #5b57d9;
 }
 .empty {
   padding: 16px;
