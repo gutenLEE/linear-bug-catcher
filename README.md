@@ -1,7 +1,10 @@
 # Linear Bug Catcher
 
+<a href="https://chromewebstore.google.com/detail/linear-bug-catcher/lcfjgcdfcjpjhpmhepeagjhmkmkddkme"><img src="src/icons/icon-128.png" width="84" align="right" alt="Linear Bug Catcher — install from the Chrome Web Store"></a>
+
 > Capture a screenshot and the page's network logs, annotate, and file a [Linear](https://linear.app) ticket — without ever leaving the page.
 
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-4285F4?logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/linear-bug-catcher/lcfjgcdfcjpjhpmhepeagjhmkmkddkme)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-34A853.svg)
 ![React](https://img.shields.io/badge/React-18-149ECA.svg)
@@ -52,7 +55,15 @@ A Chrome (MV3) extension for QA engineers and developers. When you hit a bug, pr
 
 The network buffer lives in the content script (not the background worker), so it survives the MV3 service worker going idle. All Linear network calls run from the background worker to avoid page CORS/CSP interference.
 
-## Getting started
+## Install
+
+**[⬇️ Install from the Chrome Web Store](https://chromewebstore.google.com/detail/linear-bug-catcher/lcfjgcdfcjpjhpmhepeagjhmkmkddkme)** — the easiest way to get started.
+
+> First run opens **Settings**. Create a Linear **Personal API key**
+> (Linear → Settings → Security & access → Personal API keys), paste it,
+> click **Connect**, pick a default team/project, and save.
+
+## Build from source
 
 **Requirements:** Node 18+ and [pnpm](https://pnpm.io).
 
@@ -68,10 +79,6 @@ pnpm build      # type-checks, then builds to dist/
 1. Open `chrome://extensions` and enable **Developer mode**.
 2. Click **Load unpacked** and select the `dist/` folder.
 3. Pin the extension. Open it with the toolbar icon or **Alt+Shift+B**.
-
-> First run opens **Settings**. Create a Linear **Personal API key**
-> (Linear → Settings → Security & access → Personal API keys), paste it,
-> click **Connect**, pick a default team/project, and save.
 
 ## Configuration
 
