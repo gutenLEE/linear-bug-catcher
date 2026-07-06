@@ -3,7 +3,7 @@ import { defineManifest } from '@crxjs/vite-plugin'
 export default defineManifest({
   manifest_version: 3,
   name: 'Linear Bug Catcher',
-  version: '0.1.0',
+  version: '0.2.0',
   description: 'Capture a screenshot and network logs, then file a Linear ticket without leaving the page.',
   icons: {
     16: 'src/icons/icon-16.png',
